@@ -1,3 +1,4 @@
 vendor
 composer.lock
+package.lock
 node_modules
