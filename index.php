@@ -24,6 +24,10 @@ if (!isset($_SESSION['oauth2state'])) {
     $_SESSION['oauth2state'] = $provider->getState();
 }
 
+if (isset($_SESSION['user'])) {
+  header('Location: /views/home.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,11 +49,11 @@ if (!isset($_SESSION['oauth2state'])) {
         <?php if (!isset($_SESSION['user'])) { ?>
         <br />
 
-        <a href='<?php echo $provider->getAuthorizationUrl() . '&redirect=/views/home.php'; ?>'
+        <a href='<?php echo $provider->getAuthorizationUrl(); ?>'
           class="loginBtn w-auto h-auto py-4 px-8 bg-sky-200 rounded-md">Login</a>
         <?php } ?>
   </div>
-  
+
 </body>
 
 </html>

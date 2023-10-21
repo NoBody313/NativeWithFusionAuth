@@ -32,7 +32,7 @@ try {
   // resource owner.
   $resourceOwner = $provider->getResourceOwner($accessToken);
   $_SESSION['user'] = $resourceOwner;
-  // Kondisi Kalau udah login akan diarahkan kesini
+  // Kondisi Kalau udah login akan di arahkan kesini
   header("Location: /views/home.php"); 
 
 } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
