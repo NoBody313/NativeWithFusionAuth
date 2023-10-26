@@ -50,7 +50,7 @@ if (isset($_SESSION['user'])) {
         <br />
 
         <a href='<?php echo $provider->getAuthorizationUrl(); ?>'
-          class="loginBtn w-auto h-auto py-4 px-8 bg-sky-200 rounded-md">Login</a>
+          class="loginBtn w-auto h-auto py-4 px-8 bg-sky-200 rounded-md font-medium">Login</a>
         <?php } ?>
   </div>
 

@@ -27,7 +27,7 @@ if (!isset($_SESSION['oauth2state'])) {
 if (!isset($_SESSION['user'])) {
     // Jika variabel sesi tidak diatur, pengguna belum login
     // Redirect pengguna ke halaman login
-    header('Location: /');
+    header('Location: redirect.php');
     exit;
 }
 
@@ -53,24 +53,25 @@ if (!isset($_SESSION['user'])) {
         </div>
 
         <div class="menuContent flex flex-row mt-8 justify-between space-x-8">
-            <div
-                class="webExcel container flex flex-col px-6 py-4 w-fit h-auto bg-blue-200 border-2 rounded-md border-blue-500 items-center">
+            <div id="redirExcel"
+                class="webExcel container flex flex-col px-6 py-4 w-fit h-auto bg-blue-200 hover:bg-blue-400 border-2 rounded-md border-blue-500 hover:border-blue-600 items-center cursor-pointer">
                 <img src="/resources/img/xls-img.png" alt="excelImg" class="w-14 h-auto">
-                <h2 class="font-medium text-lg mt-6">Redirect to Web Excel</h2>
+                <h2 class="font-medium text-lg mt-6 text-center">Redirect to Web Excel</h2>
             </div>
 
-            <div
-                class="webDVWA container flex flex-col px-6 py-4 w-fit h-auto bg-blue-200 border-2 rounded-md border-blue-500 items-center">
+            <div id="redirDVWA"
+                class="webDVWA container flex flex-col px-6 py-4 w-fit h-auto bg-blue-200 hover:bg-blue-400 border-2 rounded-md border-blue-500 hover:border-blue-600 items-center cursor-pointer">
                 <img src="/resources/img/dvwaLogo.svg" alt="excelImg" class="w-16 h-auto">
-                <h2 class="font-medium text-lg mt-4">Redirect to Web DVWA</h2>
+                <h2 class="font-medium text-lg mt-4 text-center">Redirect to Web DVWA</h2>
             </div>
         </div>
 
-        <form action="/logout.php" method="post" class="w-auto h-auto py-4 px-8 mt-8 bg-sky-200 rounded-md">
-            <input type="submit" value="Log out" />
+        <form action="/logout.php" method="post" class="w-auto h-auto py-4 px-8 mt-8 bg-sky-200 rounded-md cursor-pointer">
+            <input type="submit" value="Log out" class="font-normal cursor-pointer" />
         </form>
         <?php } ?>
     </div>
+    <script src="/resources/js/script.js"></script>
 </body>
 
 </html>
